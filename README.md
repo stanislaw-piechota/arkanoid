@@ -1,6 +1,6 @@
-#Do zrobienia
+!Do zrobienia
 
-1. Dodać rzędy bloczków
+1. dodać rzędy bloczków
 2. dodać piłkę
 3. umożlowić ruch piłki
 4. dodać zbicie bloków
