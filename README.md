@@ -1,4 +1,4 @@
-!Do zrobienia
+Do zrobienia
 
 1. dodać rzędy bloczków
 2. dodać piłkę
