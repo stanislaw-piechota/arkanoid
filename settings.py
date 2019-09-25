@@ -8,3 +8,7 @@ class Settings:
 
 		self.pad_color = (255, 255, 255)
 		self.pad_speed = 1
+
+		self.number_bricks_y = 8
+
+		self.ball_mv = False
