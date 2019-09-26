@@ -1,10 +1,11 @@
-import pygame
+import pygame, sys
 
 class Ball:
-	def __init__(self, screen, settings, player):
+	def __init__(self, screen, settings, player, bricks):
 		self.screen = screen
 		self.settings = settings
 		self.player = player
+		self.bricks = bricks
 		self.screen_rect = self.screen.get_rect()
 		self.image = pygame.image.load('images/ball1.png')
 		self.rect = self.image.get_rect()
@@ -33,7 +34,11 @@ class Ball:
 	def check_collision(self):
 		if self.rect.left <= 0 or self.rect.right >= self.settings.screen_width:
 			self.x *= -1
-		if self.rect.top <= 0 or self.rect.bottom >= self.settings.screen_height or self.rect.colliderect(self.player.rect):
+		if self.rect.top <= 0 or self.rect.colliderect(self.player.rect):
 		 	self.y = -(self.y)
-		 #if self.rect.collidepoint
-		 # dokończyć kolizję z blokami
+		if self.rect.bottom >= self.settings.screen_height:
+			self.settings.game = False
+		for brick in self.bricks:
+			if self.rect.colliderect(brick.rect):
+				self.y *= -1
+				self.bricks.remove(brick)

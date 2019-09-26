@@ -7,8 +7,10 @@ class Settings:
 		self.screen_color = (0, 0, 0)
 
 		self.pad_color = (255, 255, 255)
-		self.pad_speed = 1
+		self.pad_speed = 2
 
 		self.number_bricks_y = 8
 
 		self.ball_mv = False
+
+		self.game = True
