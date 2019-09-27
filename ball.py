@@ -1,5 +1,8 @@
 import pygame, sys
+<<<<<<< HEAD
 from random import randint
+=======
+>>>>>>> ae816fa3fd54b4dd8669cdaf54bb19aba4b6a4e8
 
 class Ball:
 	def __init__(self, screen, settings, player, bricks):
