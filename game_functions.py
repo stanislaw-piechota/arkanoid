@@ -61,3 +61,5 @@ def move(player, settings, ball):
 		player.rect.x -= settings.pad_speed
 		if not settings.ball_mv:
 			ball.rect.centerx = player.rect.centerx
+'''def lose(settings):
+	if not settings.game:'''
