@@ -5,4 +5,4 @@ Do zrobienia
 3. dodać punktacje
 4. dodać życia
 5. dodac monit o przegranej
-(6. Dodać rekord i wyświetlać go)
+6. Dodać rekord i wyświetlać go
