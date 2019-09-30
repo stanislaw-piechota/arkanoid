@@ -22,10 +22,7 @@ gf.create_board(bricks, Brick, screen, settings)
 clock = pygame.time.Clock()
 
 while True:
-<<<<<<< HEAD
 	clock.tick(207)
-=======
->>>>>>> ae816fa3fd54b4dd8669cdaf54bb19aba4b6a4e8
 	if settings.game:
 		gf.check_events(player, settings)
 		gf.move(player, settings, ball)
