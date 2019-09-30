@@ -40,5 +40,6 @@ class Ball:
 			self.settings.game = False
 		for brick in self.bricks:
 			if self.rect.colliderect(brick.rect):
+				self.settings.points += 100
 				self.y *= -1
 				self.bricks.remove(brick)

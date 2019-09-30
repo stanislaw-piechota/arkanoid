@@ -14,3 +14,5 @@ class Settings:
 		self.ball_mv = False
 
 		self.game = True
+
+		self.points = 0
