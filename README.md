@@ -1,9 +1,8 @@
 Do zrobienia
 
-1. dodać rzędy bloczków
-2. dodać piłkę
-3. umożlowić ruch piłki
-4. dodać zbicie bloków
-5. dodać punktacje
-6. dodać życia
-7. dodać przegraną i wygraną
+1. Poprawić bicie bloków
+2. Zbalansować szybkość piłki
+3. dodać punktacje
+4. dodać życia
+5. dodac monit o przegranej
+6. Dodać rekord i wyświetlać go

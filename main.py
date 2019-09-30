@@ -22,16 +22,14 @@ gf.create_board(bricks, Brick, screen, settings)
 clock = pygame.time.Clock()
 
 while True:
-<<<<<<< HEAD
-	clock.tick(207)
-=======
->>>>>>> ae816fa3fd54b4dd8669cdaf54bb19aba4b6a4e8
+	tick = 293 - len(bricks) - ball.x
+	clock.tick(tick)
 	if settings.game:
 		gf.check_events(player, settings)
 		gf.move(player, settings, ball)
 		gf.update_screen(screen, settings, player, bricks, ball)
 	else:
-		"""lose_msg.blitme()
-		sleep(3)"""
-		#coś nie tak z przyciskiem
+		lose_msg.blitme()
+		pygame.display.flip()
+		sleep(3)
 		sys.exit()
