@@ -13,6 +13,11 @@ class Scoreboard:
 
 	def prep_score(self):
 		score_str = str(self.settings.points)
-		self.image = pygame.font.render(score_str, True, self.text_color, self.settings.screen_color)
+		self.image = self.font.render(score_str, True, self.text_color, self.settings.screen_color)
 
-		#dokończyć punktacje
+		self.rect = self.image.get_rect()
+		self.rect.right = 60
+		self.rect.bottom = 630
+
+	def show_score(self):
+		self.screen.blit(self.image, self.rect)

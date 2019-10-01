@@ -5,6 +5,7 @@ from brick import Brick
 from ball import Ball
 from settings import Settings
 from button import Button
+from scoreboard import Scoreboard
 import game_functions as gf
 from time import sleep
 
@@ -14,7 +15,8 @@ settings = Settings()
 screen = pygame.display.set_mode((settings.screen_width, settings.screen_height))
 player = Pad(screen, settings)
 bricks = Group()
-ball = Ball(screen, settings, player, bricks)
+score = Scoreboard(screen, settings)
+ball = Ball(screen, settings, player, bricks, score)
 lose_msg = Button(screen)
 
 gf.create_board(bricks, Brick, screen, settings)
@@ -27,7 +29,7 @@ while True:
 	if settings.game:
 		gf.check_events(player, settings)
 		gf.move(player, settings, ball)
-		gf.update_screen(screen, settings, player, bricks, ball)
+		gf.update_screen(screen, settings, player, bricks, ball, score)
 	else:
 		lose_msg.blitme()
 		pygame.display.flip()

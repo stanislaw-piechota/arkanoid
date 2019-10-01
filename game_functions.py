@@ -1,9 +1,10 @@
 import pygame, sys
 
-def update_screen(screen, settings, player, bricks, ball):
+def update_screen(screen, settings, player, bricks, ball, score):
 	screen.fill(settings.screen_color)
 	player.draw()
 	ball.blitme()
+	score.show_score()
 	for brick in bricks:
 		brick.draw()
 

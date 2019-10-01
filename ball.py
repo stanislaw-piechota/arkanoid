@@ -2,11 +2,12 @@ import pygame, sys
 from random import randint
 
 class Ball:
-	def __init__(self, screen, settings, player, bricks):
+	def __init__(self, screen, settings, player, bricks, score):
 		self.screen = screen
 		self.settings = settings
 		self.player = player
 		self.bricks = bricks
+		self.score = score
 		self.screen_rect = self.screen.get_rect()
 		self.image = pygame.image.load('images/ball1.png')
 		self.rect = self.image.get_rect()
@@ -41,5 +42,6 @@ class Ball:
 		for brick in self.bricks:
 			if self.rect.colliderect(brick.rect):
 				self.settings.points += 100
+				self.score.prep_score()
 				self.y *= -1
 				self.bricks.remove(brick)
