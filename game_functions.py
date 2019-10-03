@@ -62,5 +62,9 @@ def move(player, settings, ball):
 		player.rect.x -= settings.pad_speed
 		if not settings.ball_mv:
 			ball.rect.centerx = player.rect.centerx
-'''def lose(settings):
-	if not settings.game:'''
+
+def restart_game(bricks, Brick, screen, settings, ball):
+	create_board(bricks, Brick, screen, settings)
+	ball.rect.centerx = ball.screen_rect.centerx
+	ball.rect.bottom = ball.player.rect.top
+	settings.ball_mv = False

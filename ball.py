@@ -11,9 +11,10 @@ class Ball:
 		self.screen_rect = self.screen.get_rect()
 		self.image = pygame.image.load('images/ball1.png')
 		self.rect = self.image.get_rect()
+		self.rect.width = 5
 
 		self.rect.centerx = self.screen_rect.centerx
-		self.rect.bottom = player.rect.top
+		self.rect.bottom = self.player.rect.top
 
 		self.x, self.y = self.rand_x(), randint(1, 3)
 
@@ -41,7 +42,7 @@ class Ball:
 			self.settings.game = False
 		for brick in self.bricks:
 			if self.rect.colliderect(brick.rect):
-				self.settings.points += 100
+				self.settings.points += 100 * self.settings.stage
 				self.score.prep_score()
 				self.y *= -1
 				self.bricks.remove(brick)

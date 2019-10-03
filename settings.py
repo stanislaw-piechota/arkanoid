@@ -9,10 +9,12 @@ class Settings:
 		self.pad_color = (255, 255, 255)
 		self.pad_speed = 2
 
-		self.number_bricks_y = 6
+		self.number_bricks_y = 1
 
 		self.ball_mv = False
 
 		self.game = True
 
 		self.points = 0
+
+		self.stage = 1
