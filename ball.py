@@ -1,5 +1,6 @@
 import pygame, sys
 from random import randint
+import math #import sin, cos
 
 class Ball:
 	def __init__(self, screen, settings, player, bricks, score):
@@ -16,16 +17,20 @@ class Ball:
 		self.rect.centerx = self.screen_rect.centerx
 		self.rect.bottom = self.player.rect.top
 
-		self.x, self.y = self.rand_x(), randint(1, 3)
+		self.v = 2
+		self.alfa = randint(-70,70)/180*(2*math.pi)
+
+		self.x, self.y = self.v * math.cos(self.alfa), self.v * math.sin(self.alfa)
+		print(self.x, self.y)
 
 	def blitme(self):
 		self.screen.blit(self.image, self.rect)
 
-	def rand_x(self):
+	"""def rand_x(self):
 		x = 0
 		while x == 0:
 			x = randint(-3, 3)
-		return x
+		return x"""
 
 	def move_ball(self):
 		self.check_collision()
