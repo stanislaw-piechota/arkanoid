@@ -10,6 +10,11 @@ from scoreboard import Scoreboard
 import game_functions as gf
 from time import sleep
 
+def _temp_get_fps(clock):
+	if clock.get_fps():
+		return clock.get_fps()
+	return clock.get_fps()
+
 pygame.init()
 
 settings = Settings()
@@ -24,20 +29,28 @@ win_msg = Win(screen)
 gf.create_board(bricks, Brick, screen, settings)
 
 clock = pygame.time.Clock()
+gameSpeed = 1
+
+FPS = gameSpeed
+
+tick = _temp_get_fps(clock)
 
 while True:
-	tick = 293 - len(bricks) - ball.x * ball.y
-	clock.tick(tick)
+	clock.tick(200)
+	#print(tick)
 	if settings.game:
 		gf.check_events(player, settings)
 		gf.move(player, settings, ball)
+		
 		gf.update_screen(screen, settings, player, bricks, ball, score)
+		
 		if len(bricks) == 0:
 			settings.stage += 1
 			win_msg.blitme()
 			pygame.display.flip()
 			sleep(3)
 			gf.restart_game(bricks, Brick, screen, settings, ball)
+			
 
 	else:
 		lose_msg.blitme()

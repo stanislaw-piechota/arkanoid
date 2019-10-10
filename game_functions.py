@@ -34,9 +34,9 @@ def create_board(bricks, Brick, screen, settings):
 
 def check_events(player, settings):
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
+		if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
 			sys.exit()
-
+					
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_RIGHT:
 				player.moving_right = True

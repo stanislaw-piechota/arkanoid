@@ -18,19 +18,16 @@ class Ball:
 		self.rect.bottom = self.player.rect.top
 
 		self.v = 2
-		self.alfa = randint(-70,70)/180*(2*math.pi)
 
-		self.x, self.y = self.v * math.cos(self.alfa), self.v * math.sin(self.alfa)
-		print(self.x, self.y)
+		self.x, self.y, self.alfa = 0, 0, 0
+		while self.x < 1 or self.y < 1:
+			self.alfa = randint(10,70)/180*(2*math.pi)
+
+			self.x, self.y = self.v * math.cos(self.alfa), self.v * math.sin(self.alfa)
+			print(self.x, self.y)
 
 	def blitme(self):
 		self.screen.blit(self.image, self.rect)
-
-	"""def rand_x(self):
-		x = 0
-		while x == 0:
-			x = randint(-3, 3)
-		return x"""
 
 	def move_ball(self):
 		self.check_collision()
@@ -42,7 +39,7 @@ class Ball:
 		if self.rect.left <= 0 or self.rect.right >= self.settings.screen_width:
 			self.x *= -1
 		if self.rect.top <= 0 or self.rect.colliderect(self.player.rect):
-		 	self.y = -(self.y)
+		 	self.y *= -1
 		if self.rect.bottom >= self.settings.screen_height:
 			self.settings.game = False
 		for brick in self.bricks:
